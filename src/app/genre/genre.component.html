@@ -1,7 +1,11 @@
 <h2>{{ genre | titlecase}}</h2>
 <h4>List of prompts:</h4>
-<ol>
-    <li *ngFor="let prompt of prompts; let i = index" [routerLink]="['/writer/', genre, i]">
-        {{ prompt }}
-    </li>
-</ol>
+<div class="container">
+<div *ngFor="let prompt of prompts; let i = index" [routerLink]="['/writer/', genre, i]">
+    <div class="card w-75 mx-auto my-3">
+        <div class="card-body">
+            {{prompt}}
+        </div>
+    </div>
+</div>
+</div>
