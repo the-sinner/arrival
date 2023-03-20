@@ -14,25 +14,25 @@ export class HomeComponent {
     {
       name: 'Action',
       value: 'action',
-      description: 'This is item 1',
+      description: 'Action Quote',
       imageUrl: 'assets/images/action.jpg'
     },
     {
       name: 'Sci-Fi',
       value: 'scifi',
-      description: 'This is item 2',
+      description: 'Scifi quote',
       imageUrl: 'assets/images/scifi.jpg'
     },
     {
       name: 'Fantasy',
       value: 'fantasy',
-      description: 'This is item 3',
+      description: 'Fantasy quote',
       imageUrl: 'assets/images/fantasy.jpg'
     },
     {
       name: 'Adventure',
       value: 'adventure',
-      description: 'This is item 4',
+      description: 'Adventure quote',
       imageUrl: 'assets/images/adventure.jpg'
     },
   ];
