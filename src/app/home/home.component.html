@@ -1,0 +1,24 @@
+<ngb-carousel class="carousel" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+    <ng-template ngbSlide>
+        <img src="assets/images/carousel1.jpg" width="100%" height="800px" alt="Slide 1">
+    </ng-template>
+    <ng-template ngbSlide>
+        <img src="assets/images/carousel2.jpg" width="100%" height="800px" alt="Slide 2">
+    </ng-template>
+    <ng-template ngbSlide>
+        <img src="assets/images/carousel3.jpg" width="100%" height="800px" alt="Slide 3">
+    </ng-template>
+</ngb-carousel>
+
+
+<div class="d-flex flex-wrap justify-content-around">
+    <div class="card mb-4" style="width: 18rem;" *ngFor="let item of items">
+        <a [ngStyle]="cardLink" [routerLink]="['/genre/', item.value]">
+            <img class="card-img-top" width="100%" height="200px" [src]="item.imageUrl" alt="{{ item.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+            </div>
+        </a>
+    </div>
+</div>

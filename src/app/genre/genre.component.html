@@ -1,0 +1,7 @@
+<h2>{{ genre | titlecase}}</h2>
+<h4>List of prompts:</h4>
+<ol>
+    <li *ngFor="let prompt of prompts; let i = index" [routerLink]="['/writer/', genre, i]">
+        {{ prompt }}
+    </li>
+</ol>

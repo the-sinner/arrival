@@ -1,0 +1,16 @@
+Actor 
+Actress
+Movies by awards - Oscars, Golden Globe, Filmfare
+Movie
+
+-One/Two way data binding
+-ngModel
+(click)
+ngClass
+ngStyle
+-ngFor
+-ngIf
+ngSwitch
+
+-pipe
+-routing
