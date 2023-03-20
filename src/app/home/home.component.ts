@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { genres } from '../db';
 
 @Component({
   selector: 'app-home',
@@ -10,31 +11,8 @@ export class HomeComponent {
     'color': 'inherit',
     'text-decoration': 'none'
   }
-  items = [
-    {
-      name: 'Action',
-      value: 'action',
-      description: 'Action Quote',
-      imageUrl: 'assets/images/action.jpg'
-    },
-    {
-      name: 'Sci-Fi',
-      value: 'scifi',
-      description: 'Scifi quote',
-      imageUrl: 'assets/images/scifi.jpg'
-    },
-    {
-      name: 'Fantasy',
-      value: 'fantasy',
-      description: 'Fantasy quote',
-      imageUrl: 'assets/images/fantasy.jpg'
-    },
-    {
-      name: 'Adventure',
-      value: 'adventure',
-      description: 'Adventure quote',
-      imageUrl: 'assets/images/adventure.jpg'
-    },
-  ];
-
+  genres:any;
+  ngOnInit() {
+    this.genres = genres
+  }
 }

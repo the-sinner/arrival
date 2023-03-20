@@ -1,11 +1,14 @@
-<h2>{{ genre | titlecase}}</h2>
-<h4>List of prompts:</h4>
-<div class="container">
-<div *ngFor="let prompt of prompts; let i = index" [routerLink]="['/writer/', genre, i]">
-    <div class="card w-75 mx-auto my-3">
-        <div class="card-body">
-            {{prompt}}
+<!-- <div [style.background-image]="'url(' + imageLink + ')'"> -->
+<div id="bg">
+    <h2>{{ genre | titlecase}}</h2>
+    <h4>List of prompts:</h4>
+    <div class="container">
+        <div *ngFor="let prompt of prompts; let i = index" [routerLink]="['/writer/', genre, i]">
+            <div class="card w-75 mx-auto my-3">
+                <div class="card-body" style="cursor:pointer;">
+                    {{prompt}}
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>

@@ -1,4 +1,14 @@
-ul {
+#bg {
+  /* background-image: url({{ imageUrl }}); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: larger;
+}
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -21,4 +31,4 @@ ul {
   li.active {
     background-color: #4CAF50;
     color: white;
-  }
+  } */

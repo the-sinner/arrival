@@ -10,14 +10,22 @@
     </ng-template>
 </ngb-carousel>
 
+<div class="hero">
+    <h1>Start writing your dreams..</h1>
+    <p>Choose any genre below and see some sample prompts for writing</p>
+    <a routerLink="/list" class="btn btn-primary">See All Genres</a>
+</div>
 
+<h1>
+    Top Genres:
+</h1>
 <div class="d-flex flex-wrap justify-content-around">
-    <div class="card mb-4" style="width: 18rem;" *ngFor="let item of items">
-        <a [ngStyle]="cardLink" [routerLink]="['/genre/', item.value]">
-            <img class="card-img-top" width="100%" height="200px" [src]="item.imageUrl" alt="{{ item.name }}">
+    <div class="card mb-4" style="width: 18rem;" *ngFor="let genre of genres">
+        <a [ngStyle]="cardLink" [routerLink]="['/genre/', genre.value]">
+            <img class="card-img-top" width="100%" height="200px" [src]="genre.imageUrl" alt="{{ genre.name }}">
             <div class="card-body">
-                <h5 class="card-title">{{ item.name }}</h5>
-                <p class="card-text">{{ item.description }}</p>
+                <h5 class="card-title">{{ genre.name }}</h5>
+                <p class="card-text">{{ genre.description }}</p>
             </div>
         </a>
     </div>

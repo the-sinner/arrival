@@ -15,7 +15,7 @@ export class WriterComponent {
     private promptService: PromptService,
     private router: Router) { }
 
-  content = '';
+  content = "Start writing a story based on the above prompt...";
   prompt: string = "";
   idx: number = -1;
   genre: string = "";
@@ -25,7 +25,7 @@ export class WriterComponent {
     this.idx = parseInt(this.route.snapshot.paramMap.get('idx')!, 10);
     this.localKey = this.genre+this.idx;
     this.prompt = this.promptService.getPrompt(this.genre, this.idx);
-    this.content = localStorage.getItem(this.localKey) ?? "";
+    this.content = localStorage.getItem(this.localKey) ?? this.content;
     // console.log(this.prompt)
   }
 

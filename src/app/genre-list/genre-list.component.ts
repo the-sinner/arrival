@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { genres } from '../db';
+import { genreList, genres } from '../db';
 
 @Component({
   selector: 'app-genre-list',
@@ -7,8 +7,10 @@ import { genres } from '../db';
   styleUrls: ['./genre-list.component.css']
 })
 export class GenreListComponent {
-  genres: string[] = []
+  genres: string[] = [];
+  genre:any;
   ngOnInit() {
-    this.genres = genres;
+    this.genres = genreList;
+    this.genre = genres;
   }
 }

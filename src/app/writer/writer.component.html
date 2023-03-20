@@ -1,4 +1,6 @@
 <h3>{{prompt}}</h3>
-<quill-editor [styles]="{height: '200px'}" [(ngModel)]="content" [config]="{ toolbar: false }"  (onEditorChanged)="changedEditor($event)"></quill-editor>
+<div class="editor-container">
+    <quill-editor [styles]="{height: '500px'}" [(ngModel)]="content" [config]="{ toolbar: false }"
+        (onEditorChanged)="changedEditor($event)"></quill-editor>
+</div>
 <!-- name="ql-editor" ngDefaultControl -->
-
