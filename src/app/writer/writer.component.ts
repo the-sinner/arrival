@@ -19,17 +19,22 @@ export class WriterComponent {
   prompt: string = "";
   idx: number = -1;
   genre: string = "";
+  localKey = "";
   ngOnInit() {
     this.genre = this.route.snapshot.paramMap.get('genre')!;
     this.idx = parseInt(this.route.snapshot.paramMap.get('idx')!, 10);
-    this.content = this.promptService.getPrompt(this.genre, this.idx);
-    this.prompt = this.content;
+    this.localKey = this.genre+this.idx;
+    this.prompt = this.promptService.getPrompt(this.genre, this.idx);
+    this.content = localStorage.getItem(this.localKey) ?? "";
     // console.log(this.prompt)
   }
 
   changedEditor(event: EditorChangeContent | EditorChangeSelection) {
     // tslint:disable-next-line:no-console
     console.log('editor-change', event)
+    if (event.event === 'text-change') {
+      localStorage.setItem(this.localKey, event.html ?? "");
+    }
   }
 
 }

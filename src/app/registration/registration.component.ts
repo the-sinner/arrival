@@ -12,9 +12,10 @@ constructor(private router: Router, private userService: UserService){}
   model: any = {};
 
   onSubmit() {
-    this.userService.isRegistered = true;
+    
     console.log(this.model);
     alert("Successfully Registered");
+    this.userService.register();
     this.router.navigate(['/']);
   }
 

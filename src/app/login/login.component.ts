@@ -20,7 +20,7 @@ export class LoginComponent {
     // Check the email and password
     if (this.email === 'admin' && this.password === 'admin') {
       this.userService.currentUser = this.email;
-      this.userService.isLoggedIn = true;
+      this.userService.logIn();
       alert('Login successful!');
       this.router.navigate(['/']);
     } else {
