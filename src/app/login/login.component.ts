@@ -18,7 +18,7 @@ export class LoginComponent {
 
   onSubmit(form: NgForm) {
     // Check the email and password
-    if (this.email === 'abc@xyz.com' && this.password === 'password') {
+    if (this.email === 'admin' && this.password === 'admin') {
       this.userService.currentUser = this.email;
       this.userService.isLoggedIn = true;
       alert('Login successful!');
