@@ -1,5 +1,16 @@
 # Arrival
 
+A online platform to write stories with the help of some prompts
+
+About Page background by [SVGBackgrounds.com](https://www.svgbackgrounds.com/)
+Editor Used - [Quilljs](https://quilljs.com/)
+Images used from [Pixabay](pixabay.com/) and [Pexels](https://www.pexels.com/)
+Some images used from [r/Megalophobia](https://www.reddit.com/r/megalophobia)
+Story Prompts by [ChatGPT](https://openai.com/blog/chatgpt)
+CSS Used - [Bootstrap](https://getbootstrap.com/)
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
 
 ## Development server
