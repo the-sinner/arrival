@@ -8,6 +8,12 @@
   color: white;
   font-size: larger;
 }
+
+h2 {
+  text-align: center;
+  color: azure;
+  margin-top: 30px;
+}
 /* ul {
     list-style-type: none;
     margin: 0;

@@ -1,6 +1,7 @@
-<h3>{{prompt}}</h3>
-<div class="editor-container">
-    <quill-editor [styles]="{height: '500px'}" [(ngModel)]="content" [config]="{ toolbar: false }"
+<div class="editor-container" style="flex-direction: column;">
+    <h3 style="margin: 30px 100px; color: antiquewhite;">{{prompt}}</h3> 
+    <!-- style="display: block;" -->
+    <quill-editor [styles]="{height: '500px', color: 'antiquewhite'}" [(ngModel)]="content" [config]="{ toolbar: false }"
         (onEditorChanged)="changedEditor($event)"></quill-editor>
 </div>
 <!-- name="ql-editor" ngDefaultControl -->

@@ -5,10 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class PromptService {
   getPrompt(genre: string, idx: number): string {
+    console.log(genre);
     if (genre in this.prompts) {
       let prompts = this.prompts[genre as keyof typeof this.prompts];
+      console.log(genre + ":" + prompts);
       if (0 <= idx && idx < prompts.length) {
-        return prompts[0];
+        return prompts[idx];
       }
     }
     return "";
@@ -95,7 +97,139 @@ export class PromptService {
 
       "In a future where humans have colonized the moon, a group of miners must fight to survive when they discover a dangerous alien creature lurking beneath the surface.",
     ],
-  }
+    "mystery": [
+      "A wealthy philanthropist is found dead in their mansion, with no signs of forced entry or struggle. The only clue is a cryptic message left behind.",
 
+      "A small town is shaken by a series of bizarre murders, all committed by someone who seems to have a grudge against the town's most prominent families.",
+
+      "A group of college students go on a weekend camping trip, but when they wake up one morning, one of them is missing and there's blood on the ground.",
+
+      "A detective is hired to investigate a seemingly straightforward case of embezzlement, but as they dig deeper, they realize that there's much more going on than meets the eye.",
+
+      "A famous artist is found dead in their studio, with a painting that seems to have been altered after their death. The painting holds the key to solving the case.",
+
+      "A retired detective is drawn back into the world of crime-solving when an old case is reopened and new evidence comes to light.",
+
+      "A group of friends take a vacation on a secluded island, only to find themselves trapped when one of them is found dead and there's no way off the island.",
+
+      "A young woman is found dead in her apartment, with no signs of foul play. As the investigation progresses, the detective realizes that the victim's online life holds the key to solving the case.",
+
+      "A small village is haunted by a series of unexplained disappearances, and the locals start to suspect that a supernatural force is at work.",
+
+      "A wealthy businessman is kidnapped, and the ransom note contains a series of cryptic clues that the detective must decipher in order to find the victim and solve the case.",
+    ],
+    "thriller": [
+      "A family moves into a new house in a quiet suburban neighborhood, but strange occurrences start happening that make them question their sanity and safety.",
+
+      "A woman wakes up in a strange room with no memory of how she got there or who she is, and must race against time to uncover her past and escape her captors.",
+
+      "A journalist uncovers a massive conspiracy that goes all the way to the top of the government, and becomes a target for those who want to keep the truth hidden.",
+
+      "A group of friends go on a backpacking trip in a remote wilderness area, but soon find themselves hunted by a mysterious and deadly predator.",
+
+      "A detective becomes obsessed with catching a serial killer who seems to be one step ahead of the law at every turn.",
+
+      "A woman begins to suspect that her seemingly perfect husband is hiding a dark secret, and becomes determined to uncover the truth no matter the cost.",
+
+      "A group of scientists discover a breakthrough technology that could change the world, but soon realize that their invention has dangerous and unintended consequences.",
+
+      "A man wakes up in a strange city with no memory of how he got there or who he is, and must unravel a web of lies and deceit to discover his true identity.",
+
+      "A group of strangers are trapped in an elevator when the power goes out, and tensions rise as they realize that one of them is a killer.",
+
+      "A young couple on a road trip takes a shortcut through a deserted stretch of highway, only to find themselves the target of a gang of ruthless criminals.",
+    ], "drama": [
+      "A successful CEO must confront his past when an old flame resurfaces and reveals a secret that threatens to destroy his reputation and family.",
+      "After being falsely accused of a crime, a young woman must navigate a corrupt justice system and fight to clear her name while also trying to keep her family together.",
+      "A high school student becomes involved in a dangerous online game that leads her down a dark path and threatens to consume her entire life.",
+      "A struggling actor must choose between his dream career and his relationship with his girlfriend, who wants him to give up acting and settle down.",
+      "A wealthy family's secrets begin to unravel when their estranged patriarch returns after years of absence, and his sudden reappearance sets off a chain of events that threatens to tear them apart.",
+      "Two childhood friends find themselves on opposite sides of a political divide when one becomes a rising star in a far-right movement and the other joins a left-wing protest group.",
+      "A nurse working in a hospice falls in love with one of her patients, an elderly man with a tragic past, and must navigate the ethics of their relationship while also coping with his impending death.",
+      "A group of survivors must band together to survive in a post-apocalyptic world, but as they struggle to rebuild society, they must also confront the dark secrets and personal demons that led to the collapse of civilization.",
+      "A woman is forced to confront her own mortality and the legacy she will leave behind when she is diagnosed with a terminal illness and must come to terms with her past mistakes and relationships.",
+      "A young couple's marriage is tested when they are unable to conceive a child, and they must navigate the emotional and ethical complexities of IVF and adoption.",
+    ], "altuniverse": [
+      "In an alternate universe, the Roman Empire never fell and the world is ruled by a powerful Roman Emperor who must deal with threats from within and outside the empire.",
+
+      "In a world where magic is real, a group of young apprentices must navigate a dangerous and complex society of mages, witches, and other magical beings.",
+
+      "In a world where humans and robots coexist, a detective must solve a string of murders that seem to be targeting robots with advanced artificial intelligence.",
+
+      "In a dystopian world where the government controls every aspect of citizens' lives, a group of rebels must band together to overthrow the regime and restore freedom.",
+
+      "In a world where vampires and werewolves are real, a human woman falls in love with a vampire and must navigate the dangerous world of supernatural politics to be with him.",
+
+      "In a world where the Cold War never ended, a group of spies must work together to prevent a nuclear war between two superpowers.",
+
+      "In a world where everyone has a superpower, a young woman discovers that she possesses a rare and dangerous ability that makes her a target for those who want to control her.",
+
+      "In a world where time travel is possible, a historian travels back in time to prevent a catastrophic event that threatens to destroy the future.",
+
+      "In a world where the Industrial Revolution never happened, a group of inventors and scientists work to bring about a technological revolution that will change the world forever.",
+
+      "In a world where humans and aliens live together, a human diplomat must negotiate with an alien race to prevent a war that could lead to the extinction of both species.",
+    ], "romance": [
+      "A young woman must choose between two men who offer her very different futures, and must ultimately decide what she truly wants out of life and love.",
+
+      "A billionaire playboy falls in love with a down-to-earth woman who teaches him the true meaning of happiness and fulfillment.",
+
+      "Childhood sweethearts reconnect after many years apart and must overcome the obstacles that kept them apart in order to be together.",
+
+      "A woman travels to a foreign country and falls in love with a local man, but must navigate cultural differences and the disapproval of her family and friends.",
+
+      "A successful businesswoman falls in love with her new employee, but must grapple with the power dynamics of their professional relationship.",
+
+      "A young couple must overcome their past traumas and insecurities in order to build a healthy and fulfilling relationship.",
+
+      "A woman starts a fake relationship with her best friend in order to make her ex-boyfriend jealous, but soon realizes that her feelings for her friend are more than just pretend.",
+
+      "Two rival chefs compete in a cooking competition and find themselves falling in love as they push each other to be their best.",
+
+      "A woman discovers a family secret that threatens to destroy her relationship with her boyfriend, and must decide whether to reveal the truth or keep it hidden.",
+
+      "Two strangers meet on a plane and have a spontaneous, whirlwind romance that changes their lives forever.",
+    ], "horror": [
+      "A group of friends on a camping trip stumble upon an abandoned town with a dark and terrifying history, and must fight for their lives against the town's vengeful spirits.",
+
+      "A family moves into a new home and begins to experience strange and terrifying phenomena, leading them to uncover a horrific past and a malevolent presence that threatens their very existence.",
+
+      "A group of college students explore an abandoned mental hospital and unleash an ancient evil that begins to possess and manipulate them.",
+
+      "A woman discovers that her new neighbor is actually a serial killer, and must race against time to stop him before he strikes again.",
+
+      "A group of survivors in a post-apocalyptic world must fight for their lives against a new threat - zombies who have evolved to be smarter and more dangerous than ever before.",
+
+      "A family vacation turns into a nightmare when they become stranded in a remote town inhabited by a cult that worships an ancient and malevolent deity.",
+
+      "A journalist investigates a mysterious cult that is rumored to have supernatural powers, but soon discovers that the cult's leader has dark and deadly plans for her.",
+
+      "A group of friends investigate a haunted house and soon realize that they are trapped inside, with no way out and no one to help them.",
+
+      "A woman takes a job as a caretaker for a wealthy and reclusive elderly woman, but soon discovers that the woman has a horrifying secret that puts her life in danger.",
+
+      "A man inherits a cursed family estate and must confront the demons of his past as he battles to save himself and his loved ones from the evil that resides within.",
+    ], "comedy": [
+      "A bumbling detective must solve a crime in a small town, but his hilarious mishaps and missteps constantly get in the way.",
+
+      "Awo best friends decide to start a food truck business, but their lack of culinary skills and business savvy leads to hilarious disasters and misadventures.",
+
+      "A group of coworkers are forced to attend a team-building retreat in the wilderness, but their hilarious conflicts and misunderstandings threaten to derail the whole event.",
+
+      "A clumsy and awkward man tries to win the heart of the girl of his dreams, but his hilarious attempts at romance continually backfire.",
+
+      "A group of senior citizens decide to form a rock band, but their lack of musical talent and their eccentric personalities lead to a series of hilarious misadventures.",
+
+      "A struggling stand-up comedian tries to make it big in the comedy world, but her jokes fall flat and her performances are constantly sabotaged by her wacky family and friends.",
+
+      "A man wakes up with no memory of the night before and must retrace his steps to piece together the hilarious and absurd events of the previous evening.",
+
+      "A group of misfit employees at a failing company decide to band together and turn their workplace into a fun and entertaining environment, leading to a series of hilarious pranks and stunts.",
+
+      "A single mother tries to balance her career and her family life, but her hilarious attempts at multitasking lead to a series of ridiculous and relatable situations.",
+
+      "A group of friends embark on a wild and crazy adventure, but their lack of planning and their impulsive decisions lead to a series of hilarious and unexpected twists and turns.",
+    ]
+  }
 }
-//       ([a-zA-Z ,'-]+.)------ "$1",
+//    -   ([a-zA-Z ,'-]+.)------ "$1",

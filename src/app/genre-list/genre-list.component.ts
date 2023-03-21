@@ -7,10 +7,14 @@ import { genreList, genres } from '../db';
   styleUrls: ['./genre-list.component.css']
 })
 export class GenreListComponent {
-  genres: string[] = [];
-  genre:any;
+  genres: any;
+  cardLink = {
+    'color': 'inherit',
+    'text-decoration': 'none'
+  }
+  // genre:any;
   ngOnInit() {
-    this.genres = genreList;
-    this.genre = genres;
+    this.genres = genres;
+    // this.genre = genres;
   }
 }

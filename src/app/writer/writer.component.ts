@@ -24,7 +24,9 @@ export class WriterComponent {
     this.genre = this.route.snapshot.paramMap.get('genre')!;
     this.idx = parseInt(this.route.snapshot.paramMap.get('idx')!, 10);
     this.localKey = this.genre+this.idx;
+    console.log(this.genre);
     this.prompt = this.promptService.getPrompt(this.genre, this.idx);
+    console.log(this.prompt);
     this.content = localStorage.getItem(this.localKey) ?? this.content;
     // console.log(this.prompt)
   }

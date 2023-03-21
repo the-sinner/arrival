@@ -15,6 +15,7 @@ export class GenreComponent {
 
   prompts: string[] = [];
   genre: string = "";
+  genreValue:string = "";
   imageLink: string = "";
   // imageUrl = 'https://example.com/image.jpg';
 
@@ -24,10 +25,13 @@ export class GenreComponent {
   getPrompts() {
     this.genre = this.route.snapshot.paramMap.get('genre')!;
     this.prompts = this.promptService.getPrompts(this.genre);
+    // console.log(this.genre + " : " + this.prompts);
     const genreObj = genres.find((obj) => obj.value == this.genre);
     if (genreObj !== undefined) {
+      this.genre = genreObj.name;
+      this.genreValue = genreObj.value;
       this.imageLink = genreObj!.imageUrl;
-      console.log(this.imageLink)
+      // console.log(this.imageLink)
       const bgEle = document.getElementById('bg');
       bgEle!.style.backgroundImage = "url(' " + this.imageLink +"')";
       bgEle!.style.backgroundRepeat = 'no-repeat';
