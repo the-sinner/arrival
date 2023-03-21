@@ -21,6 +21,7 @@ export class WriterComponent {
   genre: string = "";
   localKey = "";
   ngOnInit() {
+    window.scroll(0,0);
     this.genre = this.route.snapshot.paramMap.get('genre')!;
     this.idx = parseInt(this.route.snapshot.paramMap.get('idx')!, 10);
     this.localKey = this.genre+this.idx;

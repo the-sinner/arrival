@@ -13,6 +13,7 @@ export class HomeComponent {
   }
   genres:any;
   ngOnInit() {
+    window.scroll(0,0);
     this.genres = genres
   }
 }

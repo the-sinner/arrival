@@ -22,6 +22,9 @@ export class GenreComponent {
   ngOnInit() {
     this.getPrompts();
   }
+  ngAfterViewInit() {
+    window.scroll(0,0);
+  }
   getPrompts() {
     this.genre = this.route.snapshot.paramMap.get('genre')!;
     this.prompts = this.promptService.getPrompts(this.genre);

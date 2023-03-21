@@ -14,6 +14,7 @@ export class GenreListComponent {
   }
   // genre:any;
   ngOnInit() {
+    window.scroll(0,0);
     this.genres = genres;
     // this.genre = genres;
   }

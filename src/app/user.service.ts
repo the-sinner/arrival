@@ -10,6 +10,7 @@ export class UserService {
   isRegistered: boolean = false;
 
   ngOnInit() {
+    window.scroll(0,0);
     this.isLoggedIn = localStorage.getItem("loggedin") === "true";
   }
   loggedIn():boolean {

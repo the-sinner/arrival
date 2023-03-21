@@ -17,6 +17,7 @@
   width: 10rem;
   flex-basis: 25%;
   color: antiquewhite;
+  border: 1px solid rgba(0, 0, 0, 0.45);
 }
 
 h2 {
