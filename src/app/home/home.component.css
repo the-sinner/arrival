@@ -46,7 +46,9 @@
     color: white;
     padding: 20px;
 }
-
+.card-title {
+  text-align: center;
+}
 .card-body {
     padding: 20px;
 }
